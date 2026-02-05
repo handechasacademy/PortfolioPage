@@ -1,0 +1,264 @@
+@font-face {
+    font-family: 'EB Garamond';
+    src: url('Fonts/static/EBGaramond-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    width: auto;
+    height: auto;
+    background: #000000;
+    font-family: 'EB Garamond', serif;
+    color: rgb(255, 252, 246);
+}
+
+.mainContainer {
+    max-width: 100%;
+    padding: 16px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 10px;
+    list-style: none;
+    gap: 1px;
+}
+
+nav a {
+    display: flex;
+    justify-content: center;
+    color: #a7a7a7;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 1px solid rgba(167, 167, 167, 0.5);
+    background: rgba(76, 76, 76, 0.29);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6px);
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    background: rgba(255, 255, 255, 0.29);
+    color: #eeeeee;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 6px 36px rgba(253, 253, 253, 0.2);
+    transform: scale(1.05);
+}
+
+
+.heroContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    max-width: auto;
+}
+
+.heroPic img {
+    width: min(300px, 40vw);
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+    border-radius: 50%;
+}
+
+.aboutMe {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.heroText {
+    color: #eeeeee;
+    overflow-wrap: break-word;  
+}
+
+/*link buttons styling*/
+
+/* From Uiverse.io by Valeron-T */ 
+.card {
+  display: flex;
+  height: 50px;
+  width: 200px;
+}
+
+.card svg {
+  position: absolute;
+  display: flex;
+  width: 60%;
+  height: 100%;
+  font-size: 24px;
+  font-weight: 700;
+  opacity: 1;
+  transition: opacity 0.25s;
+  z-index: 2;
+  padding: 0.25rem;
+  cursor: pointer;
+}
+
+.card .social-link-github,.card .social-link-discord,.card .social-link-linkedin,.card .social-link-email {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25%;
+  color: whitesmoke;
+  font-size: 24px;
+  text-decoration: none;
+  transition: 0.25s;
+  border-radius: 50px;
+}
+
+.card svg {
+  transform: scale(1);
+}
+
+
+.card .social-link-github:hover {
+  background-color: #242c34;
+  animation: bounce_613 0.4s linear;
+}
+
+.card .social-link-discord:hover {
+  background-color: #5865f2;
+  animation: bounce_613 0.4s linear;
+}
+
+.card .social-link-linkedin:hover {
+  background-color: #0a66c2;
+  animation: bounce_613 0.4s linear;
+}
+
+.card .social-link-email:hover {
+  background-color: #ff8000;
+  animation: bounce_613 0.4s linear;
+}
+
+@keyframes bounce_613 {
+  40% {
+    transform: scale(1.4);
+  }
+
+  60% {
+    transform: scale(0.8);
+  }
+
+  80% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+/* ---------- TIMELINE ---------- */
+
+.cvTimeline {
+    background-color: #0e0e0e;
+}
+
+.cvTimeline h2 {
+    text-align: center;
+}
+
+.timeline {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 40px 1fr;
+    gap: 0;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.timelineMiddle {
+    grid-column: 2;
+    background: rgba(255, 255, 255, 0.6);
+    width: 3px;
+    margin: 0 auto;
+    height: 100%;
+    position: relative;
+}
+
+.timelineMarker {
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 18px;
+    height: 18px;
+    background: #ffffff;
+    border-radius: 50%;
+}
+
+/* Timeline items (experience cards) */
+.timelineItem {
+    padding: 16px;
+    background: rgba(76, 76, 76, 0.29);
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.timelineItemRight {
+    grid-column: 1;
+    text-align: right;
+}
+
+.timelineItemLeft {
+    grid-column: 3;
+    text-align: left;
+}
+
+.timelineItemRight:hover,
+.timelineItemLeft:hover {
+    background: rgba(255, 255, 255, 0.29);
+    box-shadow: 0 6px 36px 0 rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    transform: scale(1.10);
+}
+    
+.timelineWrapper {
+    position: relative;
+    height: 90vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.timelineWalker {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    top: 0;
+    z-index: 10;
+}
+
+
+
+
+@media (max-width: 768px) {
+
+    nav ul {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 2px;
+    }
+
+    .heroContainer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .timeline h3 {
+        font-size: 16px;
+    }
+    
+}
