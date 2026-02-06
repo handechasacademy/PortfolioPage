@@ -1,15 +1,8 @@
-@font-face {
-    font-family: 'EB Garamond';
-    src: url('Fonts/static/EBGaramond-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
 body {
     width: auto;
     height: auto;
     background: #000000;
-    font-family: 'EB Garamond', serif;
+    font-family: 'Space Grotesk', sans-serif;
     color: rgb(255, 252, 246);
 }
 
@@ -64,6 +57,9 @@ nav a:hover {
     object-fit: cover;
     display: block;
     border-radius: 50%;
+    margin-right: 12rem;
+
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
 }
 
 .aboutMe {
@@ -157,14 +153,41 @@ nav a:hover {
 }
 
 
+.techStackContainer {
+  overflow: hidden;
+  width: 100%;
+  margin-top: 2rem;
+  background-color: #242c34;
+  height: 4rem;
+}
+
+.tech-stack {
+  display: flex;
+  gap: 6rem;
+  height: 100%;
+  align-items: center;
+  white-space: nowrap;
+  will-change: transform;
+}
+
+.tech-stack span {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.2rem;
+  letter-spacing: 0.08em;
+  opacity: 0.85;
+}
+
+
 /* ---------- TIMELINE ---------- */
 
 .cvTimeline {
     background-color: #0e0e0e;
+    padding-top: 1rem;;
 }
 
 .cvTimeline h2 {
     text-align: center;
+    font-family: 'JetBrains Mono', monospace;;
 }
 
 .timeline {
@@ -173,7 +196,7 @@ nav a:hover {
     grid-template-columns: 1fr 40px 1fr;
     gap: 0;
     width: 90%;
-    margin: 0 auto;
+    margin: 2rem auto;
 }
 
 .timelineMiddle {
@@ -215,14 +238,26 @@ nav a:hover {
     text-align: left;
 }
 
-.timelineItemRight:hover,
-.timelineItemLeft:hover {
+.timelineItemRight:hover {
     background: rgba(255, 255, 255, 0.29);
-    box-shadow: 0 6px 36px 0 rgba(255, 255, 255, 0.2);
+    box-shadow: 0 6px 36px rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
+
     transform: scale(1.10);
+    transform-origin: right center;
 }
+
+.timelineItemLeft:hover {
+    background: rgba(255, 255, 255, 0.29);
+    box-shadow: 0 6px 36px rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+
+    transform: scale(1.10);
+    transform-origin: left center;
+}
+
     
 .timelineWrapper {
     position: relative;
@@ -255,6 +290,12 @@ nav a:hover {
     .heroContainer {
         flex-direction: column;
         text-align: center;
+        align-items: center;
+    }
+
+    .heroPic img {
+        margin-right: 0;
+        margin-bottom: 1.5rem;
     }
 
     .timeline h3 {
