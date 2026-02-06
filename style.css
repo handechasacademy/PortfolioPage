@@ -49,6 +49,7 @@ nav a:hover {
     align-items: center;
     gap: 2rem;
     max-width: auto;
+    margin-top: 2rem;
 }
 
 .heroPic img {
@@ -71,6 +72,17 @@ nav a:hover {
 .heroText {
     color: #eeeeee;
     overflow-wrap: break-word;  
+    position: relative;
+}
+
+.heroText::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 250px; /* line length */
+    height: 1px; /* line thickness */
+    background-color: rgba(255, 255, 255, 0.3);
 }
 
 /*link buttons styling*/
@@ -96,7 +108,7 @@ nav a:hover {
   cursor: pointer;
 }
 
-.card .social-link-github,.card .social-link-discord,.card .social-link-linkedin,.card .social-link-email {
+.card .social-link-github,.card .social-link-discord,.card .social-link-linkedin,.card .social-link-email, .card .social-link-cv {
   position: relative;
   display: flex;
   align-items: center;
@@ -133,6 +145,12 @@ nav a:hover {
   background-color: #ff8000;
   animation: bounce_613 0.4s linear;
 }
+
+.card .social-link-cv:hover {
+    background-color: #1ea83f;
+    animation: bounce_613 0.4s linear;
+}
+
 
 @keyframes bounce_613 {
   40% {
