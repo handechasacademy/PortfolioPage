@@ -44,11 +44,15 @@ nav a:hover {
 
 
 .heroContainer {
+    background-image: url('images/image.jpg');
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-color: #000;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    max-width: auto;
     margin-top: 2rem;
 }
 
@@ -160,7 +164,6 @@ nav a:hover {
 .techStackContainer {
   overflow: hidden;
   width: 100%;
-  margin-top: 2rem;
   background-color: #242c34;
   height: 4rem;
 }
