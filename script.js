@@ -34,24 +34,41 @@ slideTechStack();
 
 // Walker animation
 const walker = document.querySelector('.timelineWalker');
-const wrapper = document.querySelector('.timelineWrapper');
+const timelineWrapper = document.querySelector('.timelineWrapper');
+const timelineItems = document.querySelectorAll('.timelineItem');
+
 const walkerSpeed = 0.4;
 
-let topPosition = 0;
+let topPosition;
+let minY;
+let maxY;
+
+function recalcBounds() {
+    const wrapperRect = timelineWrapper.getBoundingClientRect();
+
+    const itemRects = Array.from(timelineItems).map(timelineItem =>
+        timelineItem.getBoundingClientRect()
+    );
+
+    minY = Math.min(...itemRects.map(r => r.top)) - wrapperRect.top;
+    maxY = Math.max(...itemRects.map(r => r.bottom)) - wrapperRect.top;
+}
 
 function animateWalker() {
-    const wrapperHeight = wrapper.clientHeight;
+    topPosition -= walkerSpeed;
 
-    topPosition += walkerSpeed;
-
-    if (topPosition > wrapperHeight) {
-        topPosition = -walker.offsetHeight;
+    if (topPosition < minY - walker.offsetHeight) {
+        topPosition = maxY;
     }
 
     walker.style.top = `${topPosition}px`;
-
     requestAnimationFrame(animateWalker);
 }
 
-window.addEventListener('load', animateWalker);
+window.addEventListener('load', () => {
+    recalcBounds();
+    topPosition = maxY;
+    animateWalker();
+});
 
+window.addEventListener('resize', recalcBounds);
