@@ -80,8 +80,8 @@ nav a:hover {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 250px; /* line length */
-    height: 1px; /* line thickness */
+    width: 250px;
+    height: 1px;
     background-color: rgba(255, 255, 255, 0.3);
 }
 
@@ -89,40 +89,26 @@ nav a:hover {
 
 /* From Uiverse.io by Valeron-T */ 
 .card {
-  display: flex;
-  height: 50px;
-  width: 200px;
+    display: flex;
+    gap: 10px;
+    height: 50px;
+}
+
+.card a {
+    flex: 1; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: 24px;
+    transition: 0.25s;
 }
 
 .card svg {
-  position: absolute;
-  display: flex;
-  width: 60%;
-  height: 100%;
-  font-size: 24px;
-  font-weight: 700;
-  opacity: 1;
-  transition: opacity 0.25s;
-  z-index: 2;
-  padding: 0.25rem;
-  cursor: pointer;
-}
-
-.card .social-link-github,.card .social-link-discord,.card .social-link-linkedin,.card .social-link-email, .card .social-link-cv {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 25%;
-  color: whitesmoke;
-  font-size: 24px;
-  text-decoration: none;
-  transition: 0.25s;
-  border-radius: 50px;
-}
-
-.card svg {
-  transform: scale(1);
+    width: 60%;
+    height: 60%;
 }
 
 
