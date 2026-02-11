@@ -189,7 +189,7 @@ nav a:hover {
 
 .cvTimeline {
     background-color: #0e0e0e;
-    padding-top: 1rem;;
+    padding-top: 1rem;
 }
 
 .cvTimeline h2 {
@@ -268,7 +268,7 @@ nav a:hover {
     
 .timelineWrapper {
     position: relative;
-    height: 90vh;
+    height: auto;
     width: 100%;
     overflow: hidden;
 }
@@ -282,8 +282,83 @@ nav a:hover {
     z-index: 10;
 }
 
+/*github sectiob*/
 
+.projectsSection {
+    padding: 80px 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
 
+.projects-container {
+    max-width: 1100px;
+    width: 100%;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    font-weight: bold;
+    color: #fff; 
+}
+
+.github-activity-container {
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+    background: #111;
+    border-radius: 10px;
+    border: 1px solid #333;
+    margin: 20px auto;
+    max-width: 850px;
+    overflow-x: auto;
+}
+
+.github-activity-container img {
+    filter: invert(90%) hue-rotate(180deg) brightness(0.8) contrast(1.2);
+    mix-blend-mode: screen;    
+    width: 100%;
+    max-width: 800px;
+}
+
+.github-stats {
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.github-stats img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.repo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+    justify-items: center;
+}
+
+.repo-card {
+    background: #1c1c1c;
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 25px;
+    width: 100%;
+    max-width: 400px;
+    transition: all 0.3s ease;
+}
+
+.repo-card:hover {
+    background: rgba(255, 255, 255, 0.29);
+    box-shadow: 0 6px 36px rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    transform: translateY(-8px);
+}
 
 @media (max-width: 768px) {
 
@@ -310,3 +385,5 @@ nav a:hover {
     }
     
 }
+
+

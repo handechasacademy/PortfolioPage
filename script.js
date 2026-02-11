@@ -72,3 +72,39 @@ window.addEventListener('load', () => {
 });
 
 window.addEventListener('resize', recalcBounds);
+
+
+//github repos and activity 
+
+const username = 'handechasacademy';
+
+async function loadProjects() {
+    const grid = document.getElementById('repo-grid');
+    const pinnedNames = ['PortfolioPage', 'Photo_Gallery', 'Calculator', 'TaskManager', 'LibraryDB', 'BankProjekt', 'ChessBoard2_0', 'ContactCatalog_2', 'OrbitalTransferCalculator']; // Put your pinned repo names here!
+
+    try {
+        const response = await fetch(`https://api.github.com/users/${username}/repos`);
+        const allRepos = await response.json();
+        
+        const pinnedRepos = allRepos.filter(repo => pinnedNames.includes(repo.name));
+
+        grid.innerHTML = '';
+        pinnedRepos.forEach(repo => {
+            const card = document.createElement('div');
+            card.className = 'repo-card';
+            card.innerHTML = `
+                <h3>${repo.name}</h3>
+                <p>${repo.description || "No description provided."}</p>
+                <div class="repo-tags">
+                    <span>${repo.language || "Code"}</span>
+                </div>
+                <a href="${repo.html_url}" target="_blank" class="view-btn">View Code</a>
+            `;
+            grid.appendChild(card);
+        });
+    } catch (error) {
+        grid.innerHTML = '<p>Error loading pinned projects.</p>';
+    }
+}
+
+loadProjects();
